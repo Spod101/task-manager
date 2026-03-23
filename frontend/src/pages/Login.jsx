@@ -19,6 +19,7 @@ function Login() {
       const data = await api.login(email, password);
       if (data.token) {
         localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data));
         navigate('/dashboard');
       } else {
         setError(data.message || 'Login failed');
@@ -31,9 +32,10 @@ function Login() {
   };
 
   return (
-    <div className="auth-container">
+    <div className="auth-container view-fade">
       <div className="auth-card">
         <h1>Login</h1>
+        <p className="auth-subtitle">Continue your planning streak.</p>
         {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -56,7 +58,7 @@ function Login() {
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary" disabled={loading}>
+          <button type="submit" className="btn btn-primary auth-submit" disabled={loading}>
             {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>

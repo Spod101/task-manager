@@ -4,61 +4,69 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(23, 30, 25, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  z-index: 100;
+  padding: 1rem;
+  z-index: 40;
 }
 
 .task-form {
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
+  background: var(--white);
+  padding: 1.3rem;
+  border-radius: var(--main-radius);
+  border: 1px solid var(--line-soft);
+  box-shadow: var(--soft-shadow);
   width: 100%;
-  max-width: 500px;
+  max-width: 560px;
   max-height: 90vh;
   overflow-y: auto;
 }
 
 .task-form h2 {
-  margin-bottom: 20px;
-  color: #333;
+  margin-bottom: 1rem;
+  color: var(--charcoal);
+  font-size: 1.7rem;
+  font-weight: 900;
 }
 
 .task-form .form-group {
-  margin-bottom: 16px;
+  margin-bottom: 0.9rem;
 }
 
 .task-form label {
   display: block;
-  margin-bottom: 6px;
-  font-weight: 500;
-  color: #555;
+  margin-bottom: 0.35rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--gray-green);
 }
 
 .task-form input,
 .task-form select,
 .task-form textarea {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 14px;
+  padding: 0.74rem 0.8rem;
+  border: 1px solid var(--line-soft);
+  border-radius: 1rem;
+  font-size: 0.95rem;
   font-family: inherit;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .task-form input:focus,
 .task-form select:focus,
 .task-form textarea:focus {
   outline: none;
-  border-color: #4a90d9;
+  border-color: rgba(23, 30, 25, 0.4);
 }
 
 .form-row {
   display: flex;
-  gap: 16px;
+  gap: 0.8rem;
 }
 
 .form-row .form-group {
@@ -68,6 +76,13 @@
 .form-actions {
   display: flex;
   justify-content: flex-end;
-  gap: 12px;
-  margin-top: 24px;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 560px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
 }

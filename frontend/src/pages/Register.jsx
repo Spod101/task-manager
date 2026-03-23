@@ -31,6 +31,7 @@ function Register() {
       const data = await api.register(email, password);
       if (data.token) {
         localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data));
         navigate('/dashboard');
       } else {
         setError(data.message || 'Registration failed');
@@ -43,9 +44,10 @@ function Register() {
   };
 
   return (
-    <div className="auth-container">
+    <div className="auth-container view-fade">
       <div className="auth-card">
         <h1>Register</h1>
+        <p className="auth-subtitle">Build your personal focus dashboard.</p>
         {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -78,7 +80,7 @@ function Register() {
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary" disabled={loading}>
+          <button type="submit" className="btn btn-primary auth-submit" disabled={loading}>
             {loading ? 'Creating account...' : 'Register'}
           </button>
         </form>
