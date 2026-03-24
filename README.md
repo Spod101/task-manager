@@ -6,14 +6,53 @@ A full-stack task management application with REST API and React frontend.
 
 ```
 task-manager/
-├── backend/          # Express REST API
+├── backend/                      # Express REST API
 │   ├── src/
+│   │   ├── app.js               # Express app configuration
+│   │   ├── config/
+│   │   │   └── db.js            # Database configuration
+│   │   ├── controllers/         # Business logic
+│   │   │   ├── authController.js
+│   │   │   └── taskController.js
+│   │   ├── middleware/          # Custom middleware
+│   │   │   ├── auth.js
+│   │   │   └── errorHandler.js
+│   │   ├── models/              # Database schemas
+│   │   │   ├── Task.js
+│   │   │   └── User.js
+│   │   ├── routes/              # API routes
+│   │   │   ├── authRoutes.js
+│   │   │   └── taskRoutes.js
+│   │   └── utils/               # Utility functions
+│   │       └── generateToken.js
 │   ├── package.json
-│   └── .env.example
-├── frontend/         # React (Vite)
+│   └── src/
+├── frontend/                     # React (Vite)
 │   ├── src/
+│   │   ├── App.jsx              # Main app component
+│   │   ├── main.jsx             # Entry point
+│   │   ├── index.css            # Global styles
+│   │   ├── components/          # Reusable components
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── TaskForm.jsx
+│   │   │   ├── TaskItem.jsx
+│   │   │   └── TaskList.jsx
+│   │   ├── pages/               # Page components
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Login.jsx
+│   │   │   └── Register.jsx
+│   │   ├── services/            # API client services
+│   │   │   └── api.js
+│   │   └── styles/              # Component styles
+│   │       ├── Auth.css
+│   │       ├── Dashboard.css
+│   │       ├── Navbar.css
+│   │       ├── TaskForm.css
+│   │       └── TaskItem.css
+│   ├── index.html
 │   ├── package.json
-│   └── .env.example
+│   ├── vite.config.js
+│   └── public/
 └── README.md
 ```
 
