@@ -12,4 +12,7 @@ export default defineConfig({
       },
     },
   },
+    preview: {
+    allowedHosts: ['hsi-task-manager.up.railway.app', 'localhost'],
+  },
 });
